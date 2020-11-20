@@ -12,22 +12,24 @@ namespace FirstWCFservive_034
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        double IService1.add(double num1, double num2)
         {
-            return string.Format("You entered: {0}", value);
+            return num1 + num2;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        double IService1.Divide(double num1, double num2)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return num1 + num2;
+        }
+
+        double IService1.Multipli(double num1, double num2)
+        {
+            return num1 + num2;
+        }
+
+        double IService1.Sub(double num1, double num2)
+        {
+            return num1 + num2;
         }
     }
 }
